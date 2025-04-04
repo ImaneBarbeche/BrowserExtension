@@ -1,0 +1,289 @@
+:root{
+    --neutral-900: hsl(227, 75%, 14%);
+    --neutral-800: hsl(226, 25%, 17%);
+    --neutral-700: hsl(225, 23%, 24%);
+    --neutral-600:  hsl(226, 11%, 37%);
+    --neutral-300:  hsl(0, 0%, 78%);
+    --neutral-200: hsl(217, 61%, 90%);
+    --neutral-100: hsl(0, 0%, 93%);
+    --neutral-0: hsl(200, 60%, 99%);
+
+    --red-400:hsl(3, 86%, 64%);
+    --red-500: hsl(3, 71%, 56%);
+    --red-700:hsl(3, 77%, 44%);
+
+    --dark-gradient:linear-gradient(180deg, #040918 0%, #091540 100%);
+    --light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%)
+
+    /* Couleurs pour le mode sombre */
+    --background-dark: #1e1e2f;
+    --text-dark: #ffffff;
+    --card-dark: #2a2a3b;
+    --neutral-300-dark: #3a3a4a;
+    --neutral-600-dark: #4a4a5a;
+    --red-700-dark: #ff6b6b;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.img-extensions {
+    width: 50px; /* Ajustez la largeur selon vos besoins */
+    height: 50px; /* Ajustez la hauteur selon vos besoins */
+    object-fit: contain; /* Assure que l'image s'adapte sans déformation */
+}
+
+body {
+    font-family: "Noto Sans",sans-serif;
+    font-size: 16px;
+    background: var(--light-gradient);
+    color: var(--neutral-900);
+    padding: 20px;
+}
+
+/* Mode sombre */
+body.dark-mode {
+    background: var(--dark-gradient);
+    color: white;
+}
+
+body.dark-mode .card {
+    background-color: var(--card-dark);
+    border: 1px solid var(--neutral-300-dark);
+}
+
+body.dark-mode .tab-button {
+    background-color: var(--neutral-300-dark);
+    color: white;
+    border: 1px solid var(--neutral-600-dark);
+}
+
+body.dark-mode .tab-button.active {
+    background-color: var(--red-700-dark);
+    color: white;
+}
+
+body.dark-mode .theme-toggle {
+    background-color: var(--neutral-300-dark);
+}
+
+body.dark-mode .theme-toggle:hover {
+    background-color: var(--neutral-600-dark);
+}
+
+body.dark-mode .remove {
+    background-color: var(--neutral-300-dark);
+    color: white;
+}
+
+body.dark-mode .remove:hover {
+    background-color: var(--red-700);
+    color: white;
+}
+
+body.dark-mode .description p {
+    font-size: 14px;
+    color: white;
+    
+}
+
+body.dark-mode .header {
+    background-color: var(--neutral-300-dark);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header{
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.theme-toggle {
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.theme-toggle:hover{
+    background-color: var(--neutral-300);
+}
+.theme-toggle:focus{
+    border: 2px solid  var(--red-400);
+}
+
+.extension-list{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+}
+.extension-titre {
+    font-size: 28px;
+    font-weight: 700;
+}
+.list-boutons{
+    display: flex;
+    gap: 8px;
+}
+.tab-button{
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 1px thin var(--neutral-300);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: var(--neutral-0);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.tab-button.active{
+
+    background-color: var(--red-700);
+    color: white;
+}
+.tab-button:focus{
+    outline: 1px solid var(--red-400); /* Bordure en focus */
+    outline-offset: 2px; /* Espace entre le bouton et la bordure */
+}
+
+.tab-button:hover , .tab-button.active:hover{
+    opacity: 80%;
+}
+
+.cards-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.card {
+    background-color: var(--neutral-0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px thin var(--neutral-300);
+    display: flex;
+    flex-direction: column;
+}
+.extension-card{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.extension-info{
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.description p {
+    font-size: 14px;
+    color: var(--neutral-600);
+    font-weight: 400;
+}
+
+.extension-button {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+.remove {
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 1px solid var(--neutral-300);
+    background-color: var(--neutral-0);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+/* il faut changer background en active pour remove */
+.remove:hover{
+    background-color: var(--red-700);
+    color: white;
+}
+.remove:focus{
+    outline: 1px solid var(--red-400); /* Bordure en focus */
+    outline-offset: 2px; /* Espace entre le bouton et la bordure */
+    background-color: hsla(0, 0%, 78%, 0.281);
+}
+
+/* To hide the checkbox */
+input[type="checkbox"] {
+    display: none;
+  }
+  
+  .toggleSwitch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background-color: var(--neutral-300);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid transparent; /* Bordure invisible par défaut */
+  }
+  
+  .toggleSwitch::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    left: 5px;
+    background-color: white;
+    border-radius: 50%;
+    transition-duration: .2s;
+    border: 5px solid white;
+  }
+  
+  input[type="checkbox"]:checked+.toggleSwitch::after {
+    transform: translateX(100%);
+    transition-duration: .2s;
+    background-color: white;
+    outline: 1px solid var(--red-400); /* Bordure en focus */
+    outline-offset: 2px; /* Espace entre le bouton et la bordure */
+  }
+  /* Switch background change */
+  input[type="checkbox"]:checked+.toggleSwitch {
+    background-color: var(--red-700);
+    transition-duration: .2s;
+  }
+  
+ /* Effet hover sur le toggle switch activé */
+input[type="checkbox"]:checked + .toggleSwitch:hover {
+    opacity: 80%; /* Exemple : réduire l'opacité */
+    background-color: var(--red-500); /* Changer la couleur de fond */
+}
+
+/* Ajouter une bordure en focus au toggle switch */
+input[type="checkbox"]:focus + .toggleSwitch {
+    outline: 1px solid var(--red-400); /* Bordure en focus */
+    outline-offset: 2px; /* Espace entre le toggle et la bordure */
+}
